@@ -19,6 +19,7 @@ $('h1').style.fontSize = (side / 15) + 'px';
 $('h2').style.fontSize = (side / 30) + 'px';
 $('#p1').style.fontSize = (side / 15) + 'px';
 $('#p2').style.fontSize = (side / 15) + 'px';
+$('#p3').style.fontSize = (side / 18) + 'px';
 
 $('#img1').style.width = (side / 4) + 'px';
 
@@ -67,17 +68,33 @@ $('#arrow1').addEventListener('click', () => {
 	goIn($('#subject-industry'));
   });
 
+  $('#arrow2').addEventListener('click', () => {
+	goAway($('#subject-industry'));
+	goIn($('#support'));
+  });
+
+  $('#arrow2').style.visibility = 'hidden';
+
+  selectInfo={};
+
 for (let i = 1; i <= 5; i+=1){
 	$('#sub'+i).addEventListener('click', () => {
 		selectItem ('#sub', 5, i);
+		if (selectInfo['#ind'] && selectInfo['#sub']) $('#arrow2').style.visibility = 'visible';
+
 	});
 	$('#ind'+i).addEventListener('click', () => {
 		selectItem ('#ind', 5, i);
-		
+		if (selectInfo['#ind'] && selectInfo['#sub']) $('#arrow2').style.visibility = 'visible';
 	});
 }
 
-selectInfo={};
+for (let i = 1; i<=24; i+=1) {
+	$('#sup'+i).addEventListener('click', () => {
+		selectItem ('#sup', 24, i);
+	})
+}
+
 
 function selectItem(idFam, number, i) {
 	for (let j = 1; j<= number; j++){

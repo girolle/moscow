@@ -92,7 +92,32 @@
 	  margin: auto;
 	  width: 95%;
 	  height: auto;
+	  display: flex;
+
   }
+
+  .block25 	  {
+	position: relative;
+	display: flex;
+  height: 100%;
+  width: 15%;
+  bottom: 0;
+  background-color: white;
+  margin: auto auto;
+  box-shadow: white 0 0 5px 0;
+}
+
+.line5 {
+	width: 100%;
+	height: 19%;
+	position: relative;
+	top: 16.66%;
+	left: 0;
+	margin-bottom: 1%;
+	display: flex;
+
+}
+
   #background{
 	background-color: rgb(225,66, 98);
 	width: 100vw;
