@@ -76,7 +76,14 @@ $('#arrow1').addEventListener('click', () => {
 	goIn($('#support'));
   });
 
+
+  $('#arrow3').addEventListener('click', () => {
+	goAway($('#support'));
+	goIn($('#final'));
+  });
   $('#arrow2').style.visibility = 'hidden';
+  $('#arrow3').style.visibility = 'hidden';
+
 
   selectInfo={};
 
@@ -95,6 +102,7 @@ for (let i = 1; i <= 5; i+=1){
 for (let i = 1; i<=24; i+=1) {
 	$('#sup'+i).addEventListener('click', () => {
 		selectItem ('#sup', 24, i);
+		$('#arrow3').style.visibility = 'visible'
 	})
 }
 
@@ -108,6 +116,21 @@ function selectItem(idFam, number, i) {
 	console.log(selectInfo);
 }
 
-
-
-
+function emailForm(){
+	var form = document.createElement('form');
+	form.action = 'send.php';
+	form.method='post';
+	$("#final").append(form);
+	var input = document.createElement('input');
+	input.id = "email-text";
+	input.type = 'text';
+	input.name = 'email';
+	input.placeholder="Укажите ваш email";
+	form.append(input);
+	var button = document.createElement('input');
+	button.type = "submit";
+	button.id="email-button";
+	button.value = " ";
+	form.append(button);
+}
+emailForm();
