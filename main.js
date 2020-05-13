@@ -29,17 +29,20 @@ $('#start').style.visibility = 'visible';
 function goAway(elem) {
 	elem.style.opacity = 1;
 	let i = 50;
+	let o = 1;
 	let timerId = setInterval(() => {
 		window.requestAnimationFrame(()=>{
 			i -= 2;
-			elem.style.opacity -= 0.1;
+			o -= 0.1;
+			elem.style.opacity = o;
 			elem.style.left = i + '%';
 		});
+		if (o <= 0.2) {
+			clearInterval(timerId); 
+			elem.style.visibility = 'hidden';
+		}
 	}, 60);
-	setTimeout(() => {
-		clearInterval(timerId); 
-		elem.style.visibility = 'hidden';
-	}, 600);
+
 }
 
 function goIn(elem) {
@@ -55,12 +58,12 @@ function goIn(elem) {
 			elem.style.left = i + '%';
 			console.log(o);
 		});
+		if (o >=0.8) {
+			clearInterval(timerId); 
+			elem.style.opacity = 1;
+			elem.style.left = '50%';
+		};
 	}, 60);
-	setTimeout(() => {
-		clearInterval(timerId); 
-		elem.style.opacity = 1;
-		elem.style.left = '50%';
-	}, 600);
 }
 
 $('#arrow1').addEventListener('click', () => {
