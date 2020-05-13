@@ -73,6 +73,7 @@ for (let i = 1; i <= 5; i+=1){
 	});
 	$('#ind'+i).addEventListener('click', () => {
 		selectItem ('#ind', 5, i);
+		
 	});
 }
 
