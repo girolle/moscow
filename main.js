@@ -21,6 +21,7 @@ $('#p1').style.fontSize = (side / 15) + 'px';
 $('#p2').style.fontSize = (side / 15) + 'px';
 $('#p3').style.fontSize = (side / 18) + 'px';
 $('#p4').style.fontSize = (side / 13) + 'px';
+$('#p4').style.top = "4%";
 $('#img1').style.width = (side / 4) + 'px';
 
 $('#start').style.visibility = 'visible';
